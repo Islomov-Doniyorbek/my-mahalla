@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    width: 100%;
+}
+
+header {
+    background: green;
+    color: #fff;
+    padding: 1rem 0;
+    /* text-align: center; */
+    position: relative;
+    width: 100%;
+}
+
+header h1 {
+    text-align: center;
+}
+header .desc {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    font-style: italic;
+}
+.desc span {
+    padding: 5px 5px 5px 12px;
+    display: block;
+}
+main {
+    padding: 20px;
+}
+
+section {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+    border-bottom: 1px solid green;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background: rgb(252,252,252);
+}
+section .col img {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    border-radius: 5px;
+}
+.col p {
+    font-size: 18px;
+    padding: 5px 5px 5px 10px;
+    border-left: 1px solid green;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #333;
+}
+
+
+
+@media (max-width: 600px) {
+    section {
+        grid-template-columns: repeat(1,1fr);
+    }
+    section .col img {
+        width: 350px;
+        height: 200px;
+        position: relative;
+    }
+    .col p {
+        font-size: 15px;
+    }
+}
