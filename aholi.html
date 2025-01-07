@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demografik Statistika</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(45deg, #4CAF50, #2E7D32);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        header h1 {
+            animation: slideIn 1s ease-out;
+        }
+        /* Infinite animation for header text */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        nav {
+            background-color: #388E3C;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #2E7D32;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        
+        .section h2 {
+            padding-bottom: 15px;
+            border-bottom: 2.1px solid green;
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #section1 {
+            animation-delay: 0s;
+        }
+        #section2 {
+            animation-delay: 1s;
+        }
+        #section3 {
+            animation-delay: 2s;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background-color: white;
+            width: 250px;
+            opacity: 0;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .stat-card h3 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #388E3C;
+        }
+
+        .chart {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .bar {
+            position: relative;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 12px;
+        }
+
+        .bar1 { width: 70%; }
+        .bar2 { width: 50%; }
+        .bar3 { 
+            width: 85%;
+         }
+        .gender {
+            display: flex;
+        }
+        .gender .male{
+            background: aqua;
+            width: 53%;
+            position: relative;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .gender .female {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            width: calc(100% - 53%);
+            background: pink;
+            border-bottom-right-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        footer {
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kuyuk Kupir mahallasining demografik statistikasi</h1>
+</header>
+
+<nav>
+    <a href="index.html">Bosh sahifa</a>
+    <a href="tarix.html">Mahalla tarixi</a>
+    <a href="members.html">Mahalla faolari</a>
+</nav>
+<nav>
+    <a href="#section1">Aholi Soni</a>
+    <a href="#section2">Yosh Ta'rifi</a>
+    <a href="#section3">Tadqiqotlar</a>
+</nav>
+
+<div class="container">
+    <!-- Aholi Soni -->
+    <section id="section1" class="section">
+        <h2>Aholi Soni</h2>
+        <p>Mahallamizdagi umumiy aholi soni, jismoniy va ruhiy sog'liqni saqlash bo'yicha asosiy ma'lumotlar:</p>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Jami Aholi</h3>
+                <p>Mahallada yashovchilar soni</p>
+                <div class="number">15,000</div>
+            </div>
+            <div class="stat-card">
+                <h3>Yoshlar</h3>
+                <p>18-30 yoshdagi aholi</p>
+                <div class="number">6,000</div>
+            </div>
+            <div class="stat-card">
+                <h3>Qariyalar</h3>
+                <p>60 yoshdan katta aholi</p>
+                <div class="number">1,500</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yosh Ta'rifi -->
+    <section id="section2" class="section">
+        <h2>Yosh Ta'rifi</h2>
+        <p>Mahalladagi yosh ta'rifi va ularning tarixi:</p>
+        <div class="chart">
+            <div class="bar bar1"></div>
+        </div>
+        <p>18-30 yoshdagi aholining o‘sishi va rivojlanishi uchun ma'lumotlar va tadbirlar.</p>
+    </section>
+    <section id="section3" class="section">
+        <h2>Tadqiqotlar</h2>
+        <p>Mahallamizdagi demografik o‘zgarishlar bo‘yicha so‘nggi tadqiqotlar va natijalar:</p>
+        <div class="chart">
+            <div class="bar bar2"></div>
+        </div>
+        <p>Statistikalar va tadqiqotlar natijalari, yoshlar va qariyalar orasidagi farqni tushuntiruvchi grafika.</p>
+    </section>
+    <section id="section3" class="section">
+        <h2>Gender</h2>
+        <p>Mahallamizdagi ayollar va erkaklar ulushi:</p>
+        <div class="chart">
+            <div class="bar gender">
+                <div class="male">53%</div>
+                <div class="female">47%</div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 Mening Mahallam. Barcha huquqlar himoyalangan.</p>
+        </footer>
+    </section>
+</div>
+
+</body>
+</html>

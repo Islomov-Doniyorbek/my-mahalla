@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahalla Faollari</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, green, lime);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        header h1 {
+            animation: slideIn 1s ease-out;
+        }
+        /* Infinite animation for header text */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        nav {
+            /* background-color: #388E3C; */
+            background: linear-gradient(135deg, green, lime);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #2E7D32;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+            /* text-align: center; */
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        /* Animating each section text */
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #section1 {
+            animation-delay: 0s;
+        }
+
+        .team-member {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            max-width: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .team-member .role {
+            font-weight: bold;
+            color: #388E3C;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Animations for sections with delays */
+        #section1 {
+            animation-delay: 0s;
+        }
+        #section2 {
+            animation-delay: 1s;
+        }
+        #section3 {
+            animation-delay: 2s;
+        }
+        #section4 {
+            animation-delay: 3s;
+        }
+
+        .faol {
+            background: linear-gradient(lime, green);
+            /* background-color: white; */
+            margin: 20px 0;
+            padding: 20px;
+            color: azure;
+            font-weight: 700;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .faol:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+        .faol img {
+            max-width: 150px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .faol img:hover {
+            transform: scale(1.1);
+        }
+        .faol h3 {
+            color: azure;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .faol p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .faol .contact {
+            font-weight: bold;
+            color: cornsilk;
+        }
+        .news-section {
+            background-color: #e9f4e9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .news-item {
+            background-color: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .news-item p {
+            margin: 0;
+        }
+        footer {
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kuyuk Kupir mahalla faollari</h1>
+</header>
+
+<nav>
+    <a href="index.html">Bosh sahifa</a>
+    <a href="tarix.html">Mahalla tarixi</a>
+    <a href="aholi.html">Demografik statistika</a>
+</nav>
+
+<div class="container">
+    <!-- Mahalla Tarixi -->
+    <section id="section1" class="section">
+        <h2>Mahalla Shirkatining A'zolari</h2>
+        <p>Mahalla shirkatining tashkilotchilari va faol a'zolari, ularning lavozimlari va vazifalari haqida ma'lumot:</p>
+
+        <div class="team-container">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Rais">
+                <h3>Islomov Azizbek</h3>
+                <p class="role">Rais</p>
+                <p>Mahalla shirkatining raisi, ijtimoiy rivojlanish, jamiyatda barqarorlikni saqlash va yangi loyihalar bilan shug'ullanadi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="O'rinbosar">
+                <h3>Azizova Malika</h3>
+                <p class="role">Rais O'rinbosar</p>
+                <p>Mahalla shirkatining rais o'rinbosari, ijtimoiy va madaniy tadbirlarni tashkillashtiradi, yoshlar bilan ishlaydi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Yetakchi">
+                <h3>G'ulomov Odilbek</h3>
+                <p class="role">Yetakchi</p>
+                <p>Mahalladagi ekologik loyihalar va obodonlashtirish ishlarini boshqaradi, mahalla joylarini obodonlashtirishda faol ishtirok etadi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Faol A'zo">
+                <h3>Shodiev Javlon</h3>
+                <p class="role">Faol A'zo</p>
+                <p>Mahalladagi ijtimoiy tadbirlarda ishtirok etadigan faol a'zo, aholi bilan aloqalar o‘rnatadi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Jamiyat A'zosi">
+                <h3>Alimov Ulug'bek</h3>
+                <p class="role">Jamiyat A'zosi</p>
+                <p>Mahallada kelajakdagi loyihalar haqida mas'uliyatni o'z zimmasiga oladi va tadbirlarga ko‘maklashadi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Moliyaviy Maslahatchi">
+                <h3>Ravshanov Ulug'bek</h3>
+                <p class="role">Moliyaviy Maslahatchi</p>
+                <p>Mahalla shirkatining moliyaviy ishlarini boshqaradi, budjet va mablag'larni to'g'ri taqsimlaydi.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/120" alt="Kadrlar Bo'limi">
+                <h3>Toshpo'latov Ravshan</h3>
+                <p class="role">Kadrlar Bo'limi</p>
+                <p>Mahalladagi kadrlarni tayyorlash, ishlash uchun eng yaxshi odamlarni tanlashda mas'ul bo'lgan a'zo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faollar -->
+    <section id="section2" class="section">
+        <h2>Mahalla Faollari</h2>
+        <div class="faol">
+            <img src="https://via.placeholder.com/150" alt="Faol 1">
+            <h3>Kutlimuradov Azizbek</h3>
+            <p>Islomov Azizbek - mahallamizning faol a'zosi. U mahallada ijtimoiy loyihalar bo‘yicha ko‘plab tashabbuslarni amalga oshirgan.</p>
+            <p class="contact">Aloqa: +998 90 123 45 67</p>
+        </div>
+        <div class="faol">
+            <img src="https://via.placeholder.com/150" alt="Faol 2">
+            <h3>Azizova Malika</h3>
+            <p>Azizova Malika - mahallamizda yoshlar bilan ishlashda faol ishtirok etuvchi, ularning ijtimoiy rivojlanishiga katta hissa qo‘shmoqda.</p>
+            <p class="contact">Aloqa: +998 90 234 56 78</p>
+        </div>
+        <div class="faol">
+            <img src="https://via.placeholder.com/150" alt="Faol 3">
+            <h3>G'ulomov Odilbek</h3>
+            <p>G'ulomov Odilbek - mahallamizning obodonlashtirish loyihalarida qatnashadigan faollardan biri. U ko‘plab ekologik tashabbuslar bilan tanilgan.</p>
+            <p class="contact">Aloqa: +998 90 345 67 89</p>
+        </div>
+        <div class="faol">
+            <img src="https://via.placeholder.com/150" alt="Faol 3">
+            <h3>Malikova Mehruza</h3>
+            <p>Malikova Mehruza - mahallamizning jamoat tadbirlarida qatnashadigan faollardan biri. Uning bir qancha mahallamizga keltirgan yutuqlari mavjud, hali hamon to'xtamoqchi emas.</p>
+            <p class="contact">Aloqa: +998 91 164 08 01</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Mening Mahallam. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</div>
+
+</body>
+</html>
